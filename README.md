@@ -3,6 +3,7 @@ Elk-Stack-Project-1
 Class Project-1, Elk Stack Deployment Automated ELK Stack Deployment
 
 The files in this repository were used to configure the network depicted below.
+![image](https://user-images.githubusercontent.com/91226883/163681529-6ff07f4e-dab5-4dd4-8071-edf9d2983c14.png)
 
 Network_Diagram
 
@@ -79,6 +80,7 @@ Install docker container
 Launch docker container: elk
 Command: sysctl -w vm.max_map_count=262144
 The following screenshot displays the result of running docker ps after successfully configuring the ELK instance.
+![image](https://user-images.githubusercontent.com/91226883/163681564-e9c1e73c-5261-4ad9-9ce0-360f24de867a.png)
 
 docker_ps
 
@@ -91,12 +93,11 @@ We have installed the following Beats on these machines:
 
 Specify which Beats you successfully installed:- - Filebeat - Metricbeat
 These Beats allow us to collect the following information from each machine:
-
 - Filebeat monitors log files or locations you specify, collects log events, and forwards them either to Elasticsearch or Logstash for indexing.
 - Metricbeat collects metrics from the operating system and from services running on the server.
-Using the Playbook-install-elk.yml
 
- In order to use the playbook, you will need to have an Ansible control node already configured. Assuming you have such a control node provisioned: 
+Using the Playbook-install-elk.yml
+In order to use the playbook, you will need to have an Ansible control node already configured. Assuming you have such a control node provisioned: 
 SSH into the control node and follow the steps below:
 
 Copy the playbook file to /etc/ansible.
@@ -107,6 +108,7 @@ Run the playbook, and navigate to ElkVM to check that the installation worked as
 [elk] [10.0.0.4] ansible_python_interpreter=/usr/bin/python3
 
 Run the playbook, and SSH into the Elk vm, then run docker ps to check that the installation worked as expected. Playbook: install_elk.yml Location: /etc/ansible/install_elk.yml Navigate to http://[your.ELK-VM.External.IP]:5601/app/kibana to confirm ELK and kibana are running. You may need to try from multiple web browsers Click 'Explore On Your Own' and you should see the following:
+![Kibana dashboard](https://user-images.githubusercontent.com/91226883/163681652-ab790e17-acc4-4edb-ac53-bed7ac61c785.png)
 
 Kibana_dashboard
 
@@ -130,6 +132,7 @@ Run the playbooks, and navigate back to the installation page on the ELk-Server 
 Click the verfiy incoming Data to check and see the receiving logs from the DVWA machines.
 
 you should see the following:
+![Filebeat](https://user-images.githubusercontent.com/91226883/163681668-b643cb13-be07-4291-9420-9613126dcd48.png)
 
 Filebeat syslog
 
